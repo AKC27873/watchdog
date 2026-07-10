@@ -90,31 +90,6 @@ export WATCHDOG_EMAIL_FROM=you@gmail.com
 export WATCHDOG_EMAIL_TO=you@gmail.com
 ```
 
-### SMS / phone
-
-Two options:
-
-**Twilio (reliable, real SMS)** — sign up, get a number, then:
-
-```bash
-export WATCHDOG_TWILIO_SID=ACxxxxxxxx
-export WATCHDOG_TWILIO_TOKEN=your_auth_token
-export WATCHDOG_TWILIO_FROM=+15551230000   # your Twilio number
-export WATCHDOG_TWILIO_TO=+15559876543     # your phone
-```
-
-**Free, no signup** — many carriers accept email-to-SMS. Point
-`WATCHDOG_EMAIL_TO` at your carrier's gateway and use `--email` instead of
-`--sms`:
-
-| Carrier | Gateway address |
-| --- | --- |
-| Verizon | `5559876543@vtext.com` |
-| AT&T | `5559876543@txt.att.net` |
-| T-Mobile | `5559876543@tmomail.net` |
-
-Reliability varies by carrier; Twilio is the dependable route.
-
 ## Where data is stored
 
 Watches and their state are kept in `~/.watchdog.json`, written atomically so
